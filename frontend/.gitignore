@@ -26,3 +26,6 @@ dist-ssr
 .env
 .env.local
 .env.production
+
+# Lock files (optional - remove if you want to commit them)
+package-lock.json

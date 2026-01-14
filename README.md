@@ -190,6 +190,15 @@ npm run dev
 
 ## Usage
 
+### Test Login Credentials
+
+For testing and development, use these credentials:
+
+**Email**: admin@example.com
+**Password**: password123
+
+**Organization**: Demo Organization
+
 ### Creating Your First Project
 
 1. Register or login at http://localhost:3000/login

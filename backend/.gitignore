@@ -19,3 +19,22 @@ yarn-error.log
 /.vscode
 vcs.xml
 *.log
+
+# Laravel Cache
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+
+# Compiled Views
+/storage/framework/views/*.php
+!/storage/framework/views/.gitkeep
+
+# Sessions
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+
+# SQLite Database
+database/*.sqlite
+database/*.sqlite-journal
+
+# Lock files (optional - uncomment if you don't want to commit)
+composer.lock
