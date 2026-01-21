@@ -5,6 +5,7 @@ import Dashboard from '@/views/Dashboard.vue'
 import Projects from '@/views/Projects.vue'
 import ProjectDetail from '@/views/ProjectDetail.vue'
 import Tasks from '@/views/Tasks.vue'
+import AdminUsers from '@/views/AdminUsers.vue'
 
 const routes = [
   {
@@ -40,6 +41,12 @@ const routes = [
     name: 'Tasks',
     component: Tasks,
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/admin/users',
+    name: 'AdminUsers',
+    component: AdminUsers,
+    meta: { requiresAuth: true, requiresAdmin: true }
   }
 ]
 
@@ -54,6 +61,9 @@ router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
     next('/login')
   } else if (to.path === '/login' && authStore.isAuthenticated) {
+    next('/dashboard')
+  } else if (to.meta.requiresAdmin && authStore.user?.role !== 'admin') {
+    // Redirect non-admins away from admin routes
     next('/dashboard')
   } else {
     next()

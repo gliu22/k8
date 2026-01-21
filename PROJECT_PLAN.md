@@ -34,9 +34,9 @@ A SaaS-style task management system with real-time analytics, file attachments, 
 
 **Test URLs:**
 - Backend API: `http://localhost:8000` (run: `php artisan serve`)
-- Frontend: `http://localhost:5173` (run: `cd frontend && npm run dev`)
-- API Health Check: `http://localhost:8000/api/health`
-- API Documentation: `http://localhost:8000/api/documentation` (if using Swagger/L5-Swagger)
+- Frontend: `http://localhost:3001` (run: `cd frontend && npm run dev`) - Note: Port may vary if 5173 or 3000 are in use
+- API Health Check: `http://localhost:8000/api/health` ✅
+- Root API: `http://localhost:8000/` - Returns: `{"message":"Task Management API"}`
 
 ### **Phase 2: AWS & Databases**
 1. Deploy MySQL to AWS RDS

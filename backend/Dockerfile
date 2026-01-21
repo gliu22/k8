@@ -30,8 +30,8 @@ COPY . .
 RUN mkdir -p bootstrap/cache storage/framework/cache storage/framework/sessions storage/framework/views \
     && chmod -R 775 bootstrap/cache storage
 
-# Install dependencies
-RUN composer install --no-interaction --optimize-autoloader --no-dev
+# Install dependencies (including dev for local development)
+RUN composer install --no-interaction --optimize-autoloader
 
 # Set final permissions
 RUN chown -R www-data:www-data /var/www/html \
